@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>墨白的作品小窝</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Computer Graphics,"> 
+    
+    <meta name="author" content="Wang Mobai"> 
+    <link rel="alternative" href="atom.xml" title="墨白的作品小窝" type="application/atom+xml"> 
+    <link rel="icon" href="/img/icon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Kodelife的实用安装指南</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">Kodelife的实用安装指南</h1>
+        <div class="stuff">
+            <span>九月 02, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/PocketChip/">PocketChip</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Shader/">Shader</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>Pocket CHIP，一款小巧的口袋小电脑，它的玩法非常丰富，从Pico8游戏到8bit音乐合成，从物联网设备到黑客利器。</p>
+<p>为了让更多的小伙伴感受到Pocket CHIP的强大潜能，同时还能体会到创意编程的乐趣，所以这一次，我们会逐步指导小伙伴们安装并运行一款创意编程软件：Kodelife</p>
+<p>这是一款实时GPU着色器编辑器，同时也是VJ圈鼎鼎大名的软件，简单说就是</p>
+<p><b>真的很酷炫！</b></p>
+<p>那么接下来就开始我们的手把手教程~</p>
+<p>所需工具：Pocket CHIP、U盘、普通电脑一台</p>
+<p>主要步骤：</p>
+<p>1：下载Kodelife ARM版</p>
+<p>2：使用U盘将软件转移到Pocket CHIP上</p>
+<p>3：修改软件执行权限</p>
+<p>4：运行Kodelife</p>
+<p>5：愉快的写shader吧！</p>
+<p>详细步骤：</p>
+<p>1：访问Kodelife官网  <a href="https://hexler.net/software/kodelife" target="_blank" rel="noopener">https://hexler.net/software/kodelife</a> 在网页提供的下载地址中选择ARM版下载并解压<br><img src="/2018/09/02/Kodelife/0.webp"></p>
+<p>2：将解压得到的Kodelife文件拷贝至U盘，<br><img src="/2018/09/02/Kodelife/1.webp"></p>
+<p>双击打开主页面右下角的文件管理器，进入U盘，找到Kodelife文件，Ctrl+C复制Ctrl+V粘贴一套带走，粘贴目标文件夹可以随便选择，我们选择了将其粘贴在Downloads文件夹下。</p>
+<img src="/2018/09/02/Kodelife/2.webp">
+<img src="/2018/09/02/Kodelife/3.webp">
+<img src="/2018/09/02/Kodelife/4.webp">
+<img src="/2018/09/02/Kodelife/5.webp">
+<img src="/2018/09/02/Kodelife/6.webp">
+<p>3：修改文件权限。在Linux系统中，所有文件都有特定的权限，为了保护系统的安全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。当然啦，我们暂时不需要探究那么深，只需要打开主界面左上角的Terminal（终端）并输入以下内容即可：</p>
+<pre><code>Cd Downloads
+Chmod +x Kodelife
+</code></pre><img src="/2018/09/02/Kodelife/7.webp">
+<p>第一行命令的功能是进入Downloads文件夹</p>
+<p>第二行命令的作用是将刚刚拷贝进去的Kodelife提升操作权限，这样我们才可以打开并执行这个程序。其中chmod 是命令名，其功能是设定权限；+代表对文件增加一项权限；x代表增加的权限是“可执行”权限；最后的Kodelilfe当然就是目标文件名了。（chmod命令还有另一种使用数字修改权限的用法，比如chmod 777 Kodelife，不过限于篇幅我们在这里就不过度展开啦）</p>
+<p>两行命令输完，就可以正式启动Kobelife了~！</p>
+<img src="/2018/09/02/Kodelife/8.webp">
+<p>4：启动Kodelife：我们回到Downloads文件夹，双击打开（或者回车运行）Kodelife；<br><img src="/2018/09/02/Kodelife/9.webp"><br>系统会弹出提示，是否运行，点击Execute运行即可</p>
+<p>Kodelife启动界面</p>
+<p>Ta-da~现在就可以正式玩Shader啦</p>
+<p>5：Shader的玩法是无穷无尽的，本次教程就以Shader编写的2018年的流行色Ultra Violet（紫外光 色号为Pantone 18-3838）作为结尾吧~<br><img src="/2018/09/02/Kodelife/10.webp"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/485960496.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/163/5294950.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

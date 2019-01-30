@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>墨白的作品小窝</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Computer Graphics,"> 
+    
+    <meta name="author" content="Wang Mobai"> 
+    <link rel="alternative" href="atom.xml" title="墨白的作品小窝" type="application/atom+xml"> 
+    <link rel="icon" href="/img/icon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">角度与弧度的转换问题</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">角度与弧度的转换问题</h1>
+        <div class="stuff">
+            <span>七月 14, 2017</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Processing/">Processing</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="角度与弧度的转换"><a href="#角度与弧度的转换" class="headerlink" title="角度与弧度的转换"></a>角度与弧度的转换</h1><h4 id="radians-和-degrees"><a href="#radians-和-degrees" class="headerlink" title="radians() 和 degrees()"></a>radians() 和 degrees()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(radians(<span class="number">180</span>));  <span class="comment">// 3.1415927</span></span><br><span class="line">println(degrees(PI));   <span class="comment">// 180.0</span></span><br></pre></td></tr></table></figure>
+<p>这应该是最正式的回答了</p>
+<p>然而，作为Java的衍生产物，Processing支持非常多的Java特性；<br>其中，就包括我们接下来要说的：<br>Java的数学函数库：java.lang.Math;</p>
+<hr>
+<h4 id="Math-toRadians-和-Math-toDegrees"><a href="#Math-toRadians-和-Math-toDegrees" class="headerlink" title="Math.toRadians() 和 Math.toDegrees()"></a>Math.toRadians() 和 Math.toDegrees()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(Math.toRadians(<span class="number">180</span>));       <span class="comment">// 3.141592653589793</span></span><br><span class="line">println(Math.toDegrees(Math.PI));   <span class="comment">// 180.0</span></span><br></pre></td></tr></table></figure>
+<p>无需在开头写 import，直接用即可<br>原生函数的特点是计算结果更精确（使用double类型的数据，支持15-16个有效数字的精确度）<br>相比于Processing原生的7-8个有效数字，要精确了不少；</p>
+<hr>
+<h4 id="DEG-TO-RAD-和-RAD-TO-DEG"><a href="#DEG-TO-RAD-和-RAD-TO-DEG" class="headerlink" title="DEG_TO_RAD 和 RAD_TO_DEG"></a>DEG_TO_RAD 和 RAD_TO_DEG</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(<span class="number">180</span> * DEG_TO_RAD);  <span class="comment">// 3.1415927</span></span><br><span class="line">println(PI * RAD_TO_DEG);   <span class="comment">// 180.0</span></span><br></pre></td></tr></table></figure>
+<p>这是Processing提供的另一个快捷的方法：<br>内置数据中有两个变量，<strong>DEG_TO_RAD</strong> 和 <strong>RAD_TO_DEG</strong><br>它们的定义方式分别是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DEG_TO_RAD = <span class="number">0.017453292F</span>;  <span class="comment">// PI÷180</span></span><br><span class="line">RAD_TO_DEG = <span class="number">57.295776F</span>;    <span class="comment">// 180÷PI</span></span><br></pre></td></tr></table></figure>
+<p>也就意味着，我们可以直接在弧度数据上乘以<strong>RAD_TO_DEG</strong>，或在角度数据上乘以<strong>DEG_TO_RAD</strong>即可完成转换；</p>
+<hr>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/485960496.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/163/5294950.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
