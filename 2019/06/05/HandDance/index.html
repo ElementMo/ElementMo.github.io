@@ -26,7 +26,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">角度与弧度的转换问题</h3>
+    <h3 class="subtitle">An AI Based Choreography Project</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -43,27 +43,25 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">角度与弧度的转换问题</h1>
+        <h1 class="title">An AI Based Choreography Project</h1>
         <div class="stuff">
-            <span>七月 14, 2017</span>
+            <span>六月 05, 2019</span>
             
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Processing/">Processing</a></li></ul>
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Processing/">Processing</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Unity/">Unity</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <h1 id="角度与弧度的转换"><a href="#角度与弧度的转换" class="headerlink" title="角度与弧度的转换"></a>角度与弧度的转换</h1><h4 id="radians-和-degrees"><a href="#radians-和-degrees" class="headerlink" title="radians() 和 degrees()"></a>radians() 和 degrees()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(radians(<span class="number">180</span>));  <span class="comment">// 3.1415927</span></span><br><span class="line">println(degrees(PI));   <span class="comment">// 180.0</span></span><br></pre></td></tr></table></figure>
-<p>这应该是最正式的回答了</p>
-<p>然而，作为Java的衍生产物，Processing支持非常多的Java特性；<br>其中，就包括我们接下来要说的：<br>Java的数学函数库：java.lang.Math;</p>
+            <p>Recently I participated in an <a href="http://bj.people.com.cn/n2/2019/0605/c82846-33013427.html?from=singlemessage&isappinstalled=0" target="_blank" rel="noopener">experimental choreography project</a> at <b>Beijing Dance Academy</b>.<br>It was a great pleasure working with <a href="https://baike.baidu.com/item/%E5%88%98%E5%B2%A9/3574258?fr=aladdin" target="_blank" rel="noopener">Prof. Liu</a> and Prof. Ren.</p>
+<img src="/2019/06/05/HandDance/mtlCover.jpg">
+<p>In this project, we used an <b>optical camera</b> rather than a commercial sensor (e.g. Kinect) for skeleton tracking in order to eliminate several deficiencies. Such as the limited sensor range (2 to 8 meters), the unstability of detecting target behind transparent obstacles and the error identification of certain gestures.</p>
+<p>With the aid of <b><a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank" rel="noopener">OpenPose</a></b>, it is possible to detect human body and extract accurate skeletons in realtime. Our team did a great job building a robust <b>gesture detection framework</b> and creating fantastic <b>realtime interactive visual effects</b> via <a href="https://processing.org" target="_blank" rel="noopener">Processing</a> and <a href="https://unity.com" target="_blank" rel="noopener">Unity</a>.</p>
+<img src="/2019/06/05/HandDance/disk.jpeg">
+<p>We set up a deep learning server to get the camera feed near the stage, it analysed both the body and the hands gestures of the dancer. Then it sent data to the main control server for the final rendering.</p>
+<img src="/2019/06/05/HandDance/stars.jpg">
 <hr>
-<h4 id="Math-toRadians-和-Math-toDegrees"><a href="#Math-toRadians-和-Math-toDegrees" class="headerlink" title="Math.toRadians() 和 Math.toDegrees()"></a>Math.toRadians() 和 Math.toDegrees()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(Math.toRadians(<span class="number">180</span>));       <span class="comment">// 3.141592653589793</span></span><br><span class="line">println(Math.toDegrees(Math.PI));   <span class="comment">// 180.0</span></span><br></pre></td></tr></table></figure>
-<p>无需在开头写 import，直接用即可<br>原生函数的特点是计算结果更精确（使用double类型的数据，支持15-16个有效数字的精确度）<br>相比于Processing原生的7-8个有效数字，要精确了不少；</p>
-<hr>
-<h4 id="DEG-TO-RAD-和-RAD-TO-DEG"><a href="#DEG-TO-RAD-和-RAD-TO-DEG" class="headerlink" title="DEG_TO_RAD 和 RAD_TO_DEG"></a>DEG_TO_RAD 和 RAD_TO_DEG</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(<span class="number">180</span> * DEG_TO_RAD);  <span class="comment">// 3.1415927</span></span><br><span class="line">println(PI * RAD_TO_DEG);   <span class="comment">// 180.0</span></span><br></pre></td></tr></table></figure>
-<p>这是Processing提供的另一个快捷的方法：<br>内置数据中有两个变量，<strong>DEG_TO_RAD</strong> 和 <strong>RAD_TO_DEG</strong><br>它们的定义方式分别是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DEG_TO_RAD = <span class="number">0.017453292F</span>;  <span class="comment">// PI÷180</span></span><br><span class="line">RAD_TO_DEG = <span class="number">57.295776F</span>;    <span class="comment">// 180÷PI</span></span><br></pre></td></tr></table></figure>
-<p>也就意味着，我们可以直接在弧度数据上乘以<strong>RAD_TO_DEG</strong>，或在角度数据上乘以<strong>DEG_TO_RAD</strong>即可完成转换；</p>
-<hr>
+<p>This is the very first time that <b>deep learning</b> and <b>realtime interactive effects</b> play such important roles in dance (in China). And we were all proud of what we did.<br> (๑•ㅂ•́)و✧</p>
+<img src="/2019/06/05/HandDance/final.png">
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
